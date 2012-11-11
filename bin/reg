@@ -18,11 +18,11 @@ reg - re 'debug' wrapper
 
 =head1 VERSION
 
-version 1.0
+version 1.0.1
 
 =head1 SYNOPSIS
 
-reg [options] [string] [regex]
+  reg [options] [string] [regex]
 
   Options:
     -help            brief help message

@@ -2,7 +2,7 @@ package App::Reg;
 use strict;
 use warnings;
 
-our $VERSION = '1.0.0';
+our $VERSION = '1.0.1';
 
 # Return positive value
 1;
@@ -15,11 +15,11 @@ App::Reg - re 'debug' wrapper
 
 =head1 VERSION
 
-version 1.0
+version 1.0.1
 
 =head1 SYNOPSIS
 
-reg [options] [string] [regex]
+  reg [options] [string] [regex]
 
   Options:
     -help            brief help message
