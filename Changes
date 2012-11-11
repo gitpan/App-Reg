@@ -1,4 +1,11 @@
 Revision history for App-Reg
 
-1.0.0   Date/time
-        First public release of App::Reg, the re 'debug' wrapper.
+1.0.2  Sun Nov 11 14:18:42 2012
+     - Add changelog entry for 1.0.1
+     - Remove version information from reg manpage
+
+1.0.1  Sun Nov 11 12:31:45 2012
+     - Make first line in documentation synopsis actual code.
+
+1.0.0  Sun Nov 11 09:00:45 2012
+     - First public release of App::Reg, the re 'debug' wrapper.

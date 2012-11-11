@@ -2,7 +2,7 @@ package App::Reg;
 use strict;
 use warnings;
 
-our $VERSION = '1.0.1';
+our $VERSION = '1.0.2';
 
 # Return positive value
 1;
@@ -12,10 +12,6 @@ __END__
 =head1 NAME
 
 App::Reg - re 'debug' wrapper
-
-=head1 VERSION
-
-version 1.0.1
 
 =head1 SYNOPSIS
 
