@@ -3,11 +3,11 @@ App-Reg
 App::Reg is utility that is wrapper to re 'debug'. Sometimes, the
 regexpes aren't working, but I was too lazy to constantly type this.
 
-        perl -Mre=debug -e'"abc"=~/a.c/'
+    perl -Mre=debug -e'"abc"=~/a.c/'
 
 Why bother with constantly typing it when you can have wrapper.
 
-        re 'abc' 'a.c'
+    re 'abc' 'a.c'
 
 And it just works!
 
@@ -16,10 +16,10 @@ INSTALLATION
 
 To install this module, run the following commands:
 
-	perl Makefile.PL
-	make
-	make test
-	make install
+    perl Makefile.PL
+    make
+    make test
+    make install
 
 SUPPORT AND DOCUMENTATION
 

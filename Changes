@@ -1,5 +1,9 @@
 Revision history for App-Reg
 
+1.0.3  Sun Nov 11 20:24:13 2012
+     - Add META.yml to the distribution
+     - Removed tab characters in README
+
 1.0.2  Sun Nov 11 14:18:42 2012
      - Add changelog entry for 1.0.1
      - Remove version information from reg manpage
