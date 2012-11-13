@@ -1,16 +1,35 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use App::Reg;
 use Getopt::Long;
 use Pod::Usage;
 use Encode;
 use re qw[eval debugcolor];
 
-pod2usage 2 if !GetOptions help => \my $help or @ARGV != 2;
+pod2usage 2 unless GetOptions
+    help    => \my $help,
+    version => \my $version,
+    global  => \my $global,
+and @ARGV == 2;
+
 pod2usage 1 if $help;
 
+if ($version) {
+    print "$0 version $App::Reg::VERSION\nrunning under Perl $^V\n";
+    exit 1;
+}
+
 my ($str, $regex) = map { decode 'UTF-8', $_ } @ARGV;
-$str =~ /$regex/;
+
+# Check if multiple matches are requested
+if ($global) {
+    # () = forces list context
+    () = $str =~ /$regex/g;
+}
+else {
+    $str =~ /$regex/;
+}
 
 =head1 NAME
 
@@ -21,15 +40,26 @@ reg - re 'debug' wrapper
   reg [options] [string] [regex]
 
   Options:
+    -global          multiple matches
     -help            brief help message
+    -version         show version of reg
 
 =head1 OPTIONS
 
 =over 8
 
+=item B<-global>
+
+Assume multiple matches, just like if C</g> modifier in list context
+was used on RegExp.
+
 =item B<-help>
 
 Print a brief help message and exits.
+
+=item B<-version>
+
+Shows current reg version.
 
 =back
 
