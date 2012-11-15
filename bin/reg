@@ -5,12 +5,13 @@ use App::Reg;
 use Getopt::Long;
 use Pod::Usage;
 use Encode;
-use re qw[eval debugcolor];
 
 pod2usage 2 unless GetOptions
-    help    => \my $help,
-    version => \my $version,
-    global  => \my $global,
+    'help'     => \my $help,
+    'version'  => \my $version,
+    'global'   => \my $global,
+    'no-color' => \my $no_color,
+    'ascii'    => \my $ascii,
 and @ARGV == 2;
 
 pod2usage 1 if $help;
@@ -20,16 +21,11 @@ if ($version) {
     exit 1;
 }
 
-my ($str, $regex) = map { decode 'UTF-8', $_ } @ARGV;
+@ARGV = map { decode 'UTF-8', $_ } @ARGV unless $ascii;
 
-# Check if multiple matches are requested
-if ($global) {
-    # () = forces list context
-    () = $str =~ /$regex/g;
-}
-else {
-    $str =~ /$regex/;
-}
+my ($str, $regex) = @ARGV;
+
+reg $str, $regex, global => $global, color => !$no_color;
 
 =head1 NAME
 
@@ -40,13 +36,21 @@ reg - re 'debug' wrapper
   reg [options] [string] [regex]
 
   Options:
+    -ascii           use ASCII encoding for matching
     -global          multiple matches
     -help            brief help message
+    -no-color        disables ansi sequences
     -version         show version of reg
 
 =head1 OPTIONS
 
-=over 8
+=over 4
+
+=item B<-ascii>
+
+Uses ASCII encoding for matching. In particular it means that the data
+given to this utility is threated as binary data and C<\d> only matches
+C<[0-9]>.
 
 =item B<-global>
 
@@ -56,6 +60,11 @@ was used on RegExp.
 =item B<-help>
 
 Print a brief help message and exits.
+
+=item B<-no-color>
+
+Disables ANSI sequences and enforces the text-only representation of
+RegEx debugger. Useful when pasting the output of RegEx debugger.
 
 =item B<-version>
 

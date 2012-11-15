@@ -1,5 +1,14 @@
 Revision history for App-Reg
 
+1.2.0  Wed Nov 15 17:57:44 2012
+     - Makefile.PL isn't executable anymore
+     - Bug tracker URL in README leads to GitHub
+     - Changed repository URL
+     - Added --no-colors option to help pasting output of this utility
+     - Added --ascii option when 7 bits are enough
+     - App::Reg contains new reg() function
+     - Added unit test to make people happy
+
 1.1.0  Mon Nov 13 15:50:23 2012
      - Added --version option for receiving current reg version.
      - Added --global option that matches RegExpes with list /g modifier.

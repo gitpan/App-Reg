@@ -11,12 +11,28 @@ meta-spec:
   url: http://search.cpan.org/perldoc?CPAN::Meta::Spec
 name: App-Reg
 release_status: stable
-version: 1.1.0
+version: 1.2.0
 resources:
   license: http://dev.perl.org/licenses/
   bugtracker:
-    web: https://github.com/GlitchMr/app-reg/issues
+    web: https://github.com/GlitchMr/App-Reg/issues
   repository:
-    url: https://github.com/GlitchMr/app-reg.git
-    web: https://github.com/GlitchMr/app-reg
+    url: https://github.com/GlitchMr/App-Reg.git
+    web: https://github.com/GlitchMr/App-Reg
     type: git
+prereqs:
+  build:
+    requires:
+      'Test::More': '0'
+  runtime:
+    requires:
+      perl: '5.010'
+      'ExtUtils::MakeMaker': '0'
+      strict: '0'
+      warnings: '0'
+      Exporter: '0'
+      re: '0'
+      'Getopt::Long': '0'
+      'Pod::Usage': '0'
+      Encode: '0'
+      
