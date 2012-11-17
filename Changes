@@ -1,5 +1,8 @@
 Revision history for App-Reg
 
+1.2.2  Fri Nov 17 13:57:30 2012
+     - dynamic_config is parsed correctly with YAML module
+
 1.2.1  Fri Nov 17 13:40:23 2012
      - Make META.yml parsable for YAML module
 
