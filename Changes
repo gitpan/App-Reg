@@ -1,5 +1,8 @@
 Revision history for App-Reg
 
+1.2.3  Sat Nov 24 08:16:11 2012
+     - Perl v5.8 is now required as Perl v5.6 didn't worked correctly
+
 1.2.2  Fri Nov 17 13:57:30 2012
      - dynamic_config is parsed correctly with YAML module
 
