@@ -12,7 +12,7 @@ pod2usage 2 unless GetOptions
     'global'   => \my $global,
     'no-color' => \my $no_color,
     'ascii'    => \my $ascii,
-and @ARGV == 2;
+;
 
 pod2usage 1 if $help;
 
@@ -20,6 +20,8 @@ if ($version) {
     print "$0 version $App::Reg::VERSION\nrunning under Perl $^V\n";
     exit 1;
 }
+
+pod2usage 2 if @ARGV < 2;
 
 @ARGV = map { decode 'UTF-8', $_ } @ARGV unless $ascii;
 
