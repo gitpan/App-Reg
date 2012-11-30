@@ -5,7 +5,7 @@ use Exporter 'import';
 # Import re, but without warnings about empty list
 use re ();
 
-our $VERSION = '1.2.4';
+our $VERSION = '1.2.5';
 our @EXPORT = our @EXPORT_OK = 'reg';
 
 sub reg {

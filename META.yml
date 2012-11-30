@@ -11,7 +11,7 @@ meta-spec:
   url: http://search.cpan.org/perldoc?CPAN::Meta::Spec
 name: App-Reg
 release_status: stable
-version: 1.2.4
+version: 1.2.5
 resources:
   license: http://dev.perl.org/licenses/
   bugtracker:
@@ -25,8 +25,7 @@ prereqs:
     requires:
       'Test::More': '0'
       'File::Spec': '0'
-      'IPC::Open3': '0'
-      'Symbol': '0'
+      'Capture::Tiny': '0'
   runtime:
     requires:
       perl: '5.008'

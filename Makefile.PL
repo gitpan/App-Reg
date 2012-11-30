@@ -17,8 +17,7 @@ WriteMakefile(
     BUILD_REQUIRES => {
         'Test::More' => 0,
         'File::Spec' => 0,
-        'IPC::Open3' => 0,
-        'Symbol' => 0,
+        'Capture::Tiny' => 0,
     },
     PREREQ_PM => {
         strict => 0,
